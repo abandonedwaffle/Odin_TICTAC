@@ -3,13 +3,37 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     border: 2px solid black;
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     
 }
 
 .sqrs {
     text-align: center;
     border: 2px solid red;
+    color: white;
+    text-align: center;
+}
+.player-name-container {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+.game {
+    color: white;
 }
 
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}

@@ -122,6 +122,7 @@ const displayController = (function() {
 
     startBtn.addEventListener("click", (e)=> {
         gameController.playerInputs(document.querySelector("#playerOne").value, document.querySelector("#playerTwo").value);
+        startBtn.disabled = true;
     })
 
     btnReset.addEventListener('click', (e) => {
@@ -146,8 +147,8 @@ const displayController = (function() {
                 square.textContent = currentActivePlayer;
                 if (result == 'win' || result == 'draw') {
                     if(result == "win") {
-                        
-                        gameResult.textContent = gameController.getActivePlayer().name;
+                        let winningPlayer = gameController.getActivePlayer().name;
+                        gameResult.textContent = `${winningPlayer} has one the game`;
 
                     }  else {
                         gameResult.textContent = "Draw";
