@@ -3,36 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="script.js" defer></script>
+    <title>Tic-Tac-Toe: Modern Duel</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    
-</body>
-    <main>
-        <h1>TIC TAC TOE</h1>
-        <div class="display-board">
-            <div class="sqrs"></div>
-            <div class="sqrs"></div>
-            <div class="sqrs"></div>
-            <div class="sqrs"></div>
-            <div class="sqrs"></div>
-            <div class="sqrs"></div>
-            <div class="sqrs"></div>
-            <div class="sqrs"></div>
-            <div class="sqrs"></div>
+    <div class="background-decorations">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+
+    <main class="app-container">
+        <header>
+            <h1 class="logo-title">TIC <span class="accent-x">TAC</span> TOE</h1>
+            <p class="subtitle">A minimalist premium duel</p>
+        </header>
+
+        <!-- Player setup card -->
+        <section class="setup-card glass-panel">
+            <h2>Player Registration</h2>
+            <div class="player-name-container">
+                <div class="input-group">
+                    <label for="playerOne">
+                        <span class="marker-badge badge-x">X</span> Player One
+                    </label>
+                    <input type="text" id="playerOne" placeholder="Enter name" autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <label for="playerTwo">
+                        <span class="marker-badge badge-o">O</span> Player Two
+                    </label>
+                    <input type="text" id="playerTwo" placeholder="Enter name" autocomplete="off">
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="start-btn" disabled>Start Game</button>
+            </div>
+        </section>
+
+        <!-- Active Game Layout (initially disabled/opacity lowered) -->
+        <section class="game-container glass-panel disabled" id="gameContainer">
+            <!-- Turn Indicator & Status -->
+            <div class="turn-status-container">
+                <div class="turn-indicator" id="turnIndicator">
+                    Set names to start the match
+                </div>
+            </div>
+
+            <!-- The Grid -->
+            <div class="display-board">
+                <div class="sqrs" data-index="0"></div>
+                <div class="sqrs" data-index="1"></div>
+                <div class="sqrs" data-index="2"></div>
+                <div class="sqrs" data-index="3"></div>
+                <div class="sqrs" data-index="4"></div>
+                <div class="sqrs" data-index="5"></div>
+                <div class="sqrs" data-index="6"></div>
+                <div class="sqrs" data-index="7"></div>
+                <div class="sqrs" data-index="8"></div>
+            </div>
+
+            <!-- Controls -->
+            <div class="game-controls">
+                <button class="reset-btn">Reset Game</button>
+            </div>
+        </section>
+
+        <!-- Overlay for Game Results -->
+        <div class="result-overlay" id="resultOverlay">
+            <div class="result-modal glass-panel">
+                <div class="winner-trophy" id="winnerTrophy">🏆</div>
+                <h2 class="game" id="resultText"></h2>
+                <button class="play-again-btn" id="playAgainBtn">Play Again</button>
+            </div>
         </div>
-        <div class="player-name-container">
-            <label for="playerone">Player:</label>
-            <input type="text" id="playerOne">
-            <label for="playertwo">Player:</label>
-            <input type="text" id="playerTwo">
-        </div>
-        <div class="buttons">
-            <button class="start-btn" disabled>Start Game</button>
-            <button class="reset-btn">Reset Game</button>
-        </div>
-        <div class="game"></div>
     </main>
+</body>
 </html>
