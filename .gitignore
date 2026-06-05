@@ -1,0 +1,11 @@
+# Ignore a specific file
+
+
+# Ignore all .log files
+
+
+# Ignore a directory (trailing slash is important)
+
+
+# Ignore OS specific files
+.vscode
